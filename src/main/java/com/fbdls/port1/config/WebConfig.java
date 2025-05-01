@@ -18,7 +18,9 @@ public class WebConfig {
                         .allowedOrigins(
                                 "http://localhost:3000",
                                 "https://portfolio-start-ten.vercel.app",
-                                "https://portfolio-start-git-main-ryus-projects-a49bff1b.vercel.app"
+                                "https://portfolio-start-git-main-ryus-projects-a49bff1b.vercel.app",
+                                "https://ryudoll-dev.com",                        // ✅ 이거 추가!!
+                                "https://www.ryudoll-dev.com"                     // ✅ 이거도 있으면 좋아요
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
