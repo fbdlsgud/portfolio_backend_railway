@@ -20,7 +20,7 @@ public class SkillService {
     }
 
 
-    public Skill saveSkill(Skill skillName) {
-        return skillRepository.save(skillName);
+    public Skill saveSkill(Skill skill) {
+        return skillRepository.save(skill);
     }
 }

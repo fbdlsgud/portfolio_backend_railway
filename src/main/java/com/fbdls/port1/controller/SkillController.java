@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,11 +22,18 @@ public class SkillController {
     }
 
     @PostMapping("/addSkill")
-    public ResponseEntity<String> addSkill(@RequestBody Skill skillName) {
-        Skill s = skillService.saveSkill(skillName);
+    public ResponseEntity<String> addSkill(@RequestBody Skill skill) {
+        Skill s = skillService.saveSkill(skill);
 
         return ResponseEntity.status(HttpStatus.CREATED).body("스킬 등록 완료 : "  + s.getSkillName());
 
+    }
+
+    @PutMapping("/skillEdit")
+    public ResponseEntity<String> editSkill(@RequestBody Skill skill) {
+        Skill s = skillService.saveSkill(skill);
+
+        return ResponseEntity.ok("스킬 수정 완료 : " + s.getSkillName());
     }
 
 }
