@@ -17,7 +17,8 @@ public class WebConfig {
                 registry.addMapping("/**")
                         .allowedOrigins(
                                 "http://localhost:3000",
-                                "https://portfolio-start-ten.vercel.app"
+                                "https://portfolio-start-ten.vercel.app",
+                                "https://portfolio-start-git-main-ryus-projects-a49bff1b.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
