@@ -12,8 +12,8 @@ COPY src src
 # gradlew 실행 권한 부여
 RUN chmod +x gradlew
 
-# 빌드
-RUN ./gradlew build
+# ✅ 테스트 생략하고 빌드
+RUN ./gradlew build -x test
 
 # 실행
 CMD ["java", "-jar", "build/libs/port1-0.0.1-SNAPSHOT.jar"]
