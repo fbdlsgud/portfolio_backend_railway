@@ -1,22 +1,24 @@
 package com.fbdls.port1.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
 public class Project {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String title;
+
+    @Column(name = "main_desc")
     private String mainDesc;
+
+    @Column(name = "sub_desc")
     private String subDesc;
 
     private String skill;

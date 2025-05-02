@@ -1,9 +1,6 @@
 package com.fbdls.port1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -15,7 +12,9 @@ public class Login {
     private int Lid;
 
     private String username;
+    @Column(name = "login_id")
     private String loginId;
+    @Column(name = "login_pwd")
     private String loginPwd;
 
 }

@@ -1,10 +1,7 @@
 package com.fbdls.port1.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -15,8 +12,9 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int sid;
 
+    @Column(name = "skill_name")
     private String skillName;
-
+    @Column(name = "skill_desc")
     private String skillDesc;
 
 
