@@ -11,8 +11,8 @@
 #        ddl-auto: update
 #      show-sql: true
 #
-#  server:
-#    port: 8070
+#server:
+#  port: 8070
 
 
 # 클라우드 배포 백용
