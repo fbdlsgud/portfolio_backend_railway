@@ -18,4 +18,8 @@ public class Project {
     private String title;
     private String mainDesc;
     private String subDesc;
+
+    private String skill;
+    private String people;
+    private String date;
 }
