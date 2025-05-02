@@ -31,7 +31,7 @@ public class WebConfig {
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true)  // ✅ 이거 필수
-                        .exposedHeaders("Set-Cookie");  // ✅ 인증 쿠키 주고받기 위함
+                        .exposedHeaders("Set-Cookie");  // ✅ 인증 쿠키 주고받기
             }
         };
     }
