@@ -17,8 +17,9 @@ public class SkillController {
     private SkillService skillService;
 
     @GetMapping("/skillsList")
-    public List<Skill> getAllSkills() {
-        return skillService.getAllSkill();
+    public ResponseEntity<List<Skill>> getSkills() {
+        System.out.println("🧠 /skillsList 호출됨!");
+        return ResponseEntity.ok(skillService.findAll());
     }
 
     @PostMapping("/addSkill")

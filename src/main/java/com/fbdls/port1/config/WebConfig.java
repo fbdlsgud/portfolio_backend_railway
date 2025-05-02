@@ -9,19 +9,24 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig {
 
+    public WebConfig() {
+        System.out.println("🛡️ WebConfig 생성됨! CORS 설정 시작!");
+    }
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                System.out.println("🔓 CORS 매핑됨!");
                 registry.addMapping("/**")
                         .allowedOrigins(
                                 "http://localhost:3000",
                                 "https://portfolio-start-ten.vercel.app",
                                 "https://portfolio-start-git-main-ryus-projects-a49bff1b.vercel.app",
-                                "https://ryudoll-dev.com",                        // ✅ 이거 추가!!
+                                "https://ryudoll-dev.com",
                                 "https://www.ryudoll-dev.com",
-                                "https://www.ryudolldev.com"// ✅ 이거도 있으면 좋아요
+                                "https://www.ryudolldev.com"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
@@ -30,4 +35,5 @@ public class WebConfig {
         };
     }
 }
+
 
