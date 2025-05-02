@@ -1,0 +1,32 @@
+package com.fbdls.port1.controller;
+
+import com.fbdls.port1.entity.Project;
+import com.fbdls.port1.service.ProjectService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class ProjectController {
+
+    @Autowired
+    ProjectService projectService;
+
+    @GetMapping("/projectList")
+    public List<Project> getProjectList() {
+        return projectService.getAllProject();
+    }
+
+    @PostMapping("/addProject")
+    public ResponseEntity<String> addProject(@RequestBody Project project) {
+        Project p = projectService.saveProject(project);
+
+        return ResponseEntity.ok(p.getTitle());
+    }
+
+}
