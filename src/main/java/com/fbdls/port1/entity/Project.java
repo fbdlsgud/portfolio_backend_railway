@@ -15,7 +15,9 @@ public class Project {
 
     private String title;
 
-    @Column(name = "main_desc")
+
+    @Lob
+    @Column(name = "main_desc", columnDefinition = "TEXT")
     private String mainDesc;
 
     @Column(name = "sub_desc")
