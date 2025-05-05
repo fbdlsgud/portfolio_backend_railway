@@ -9,7 +9,7 @@ public class Login {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Lid;
+    private int lid;
 
     private String username;
     @Column(name = "login_id")

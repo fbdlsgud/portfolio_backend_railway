@@ -37,4 +37,12 @@ public class SkillController {
         return ResponseEntity.ok("스킬 수정 완료 : " + s.getSkillName());
     }
 
+
+    @DeleteMapping("/skillDelete/{sid}")
+    public ResponseEntity<String> deleteSkill(@PathVariable Integer sid) {
+        skillService.deleteById(sid);
+
+        return ResponseEntity.ok("스킬 삭제 완료 : " + sid + " 번 스킬" );
+    }
+
 }

@@ -23,4 +23,9 @@ public class SkillService {
     public Skill saveSkill(Skill skill) {
         return skillRepository.save(skill);
     }
+
+    public void deleteById(Integer sid) {
+        skillRepository.deleteById(sid);
+
+    }
 }
