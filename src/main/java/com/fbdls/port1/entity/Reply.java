@@ -20,4 +20,6 @@ public class Reply {
 
     private String reply;
 
+    private String avatar;
+
 }
