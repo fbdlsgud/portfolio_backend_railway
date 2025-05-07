@@ -24,4 +24,8 @@ public class ProjectService {
     public void deleteById(int id) {
         projectRepository.deleteById(id);
     }
+
+    public List<Project> findTop3ByOrderByIdDesc() {
+        return  projectRepository.findTop3ByOrderByIdDesc();
+    }
 }

@@ -22,4 +22,5 @@ public class Reply {
 
     private String avatar;
 
+
 }

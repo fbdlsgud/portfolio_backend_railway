@@ -31,4 +31,9 @@ public class ReplyController {
         return ResponseEntity.ok(r.getUserId());
     }
 
+    @GetMapping("/replyLatest")
+    public List<Reply> replyLatest() {
+        return replyService.findTop3ByOrderByRidDesc();
+    }
+
 }

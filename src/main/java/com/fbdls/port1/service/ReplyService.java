@@ -21,4 +21,8 @@ public class ReplyService {
     public Reply saveReply(Reply reply) {
         return replyRepository.save(reply);
     }
+
+    public List<Reply> findTop3ByOrderByRidDesc() {
+        return replyRepository.findTop3ByOrderByRidDesc();
+    }
 }

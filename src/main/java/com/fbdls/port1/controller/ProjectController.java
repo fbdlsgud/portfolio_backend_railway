@@ -41,4 +41,10 @@ public class ProjectController {
         return ResponseEntity.ok("Project deleted successfully 삭제");
     }
 
+
+    @GetMapping("/projectLatest")
+    public List<Project> getProjectLatest() {
+        return projectService.findTop3ByOrderByIdDesc();
+    }
+
 }
