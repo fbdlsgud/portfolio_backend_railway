@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 @Service
 public class VisitService {
@@ -16,7 +17,7 @@ public class VisitService {
 
     public void increaseVisit(){
 
-        LocalDate now = LocalDate.now();
+        LocalDate now = LocalDate.now(ZoneId.of("Asia/Seoul"));
 
         Visit visit = visitRepository.findByVisitDate(now)
                 .orElseGet(()->{
