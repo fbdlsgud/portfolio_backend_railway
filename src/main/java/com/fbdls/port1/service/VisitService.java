@@ -32,7 +32,7 @@ public class VisitService {
     }
 
     public int getTodayVisitCount(){
-        return visitRepository.findByVisitDate(LocalDate.now())
+        return visitRepository.findByVisitDate(LocalDate.now(ZoneId.of("Asia/Seoul")))
                 .map(Visit::getCount)
                 .orElse(0);
     }
