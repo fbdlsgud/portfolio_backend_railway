@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig {
 
     public WebConfig() {
-        System.out.println("🛡️ WebConfig 생성됨! CORS 설정 시작!");
+
     }
 
     @Bean
@@ -18,7 +18,7 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                System.out.println("🔓 CORS 매핑됨!");
+
                 registry.addMapping("/**")
                         .allowedOrigins(
                                 "http://localhost:3000",

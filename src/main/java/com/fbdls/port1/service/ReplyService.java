@@ -25,4 +25,12 @@ public class ReplyService {
     public List<Reply> findTop3ByOrderByRidDesc() {
         return replyRepository.findTop3ByOrderByRidDesc();
     }
+
+
+    public Reply findByRid(int rid) {
+        return replyRepository.findById(rid).orElse(null);
+    }
+
+    public void deleteReply(int rid) {
+    }
 }

@@ -18,7 +18,7 @@ public class SkillController {
 
     @GetMapping("/skillsList")
     public List<Skill> getAllSkills() {
-        System.out.println("🧠 /skillsList 호출됨!");
+
         return skillService.getAllSkill();
     }
 
