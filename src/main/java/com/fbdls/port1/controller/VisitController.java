@@ -17,10 +17,16 @@ public class VisitController {
 
 
     @GetMapping("/visit")
-    public Map<String, Integer> visit() {
+    public void visit() {
 
         visitService.increaseVisit();
 
+
+    }
+
+
+    @GetMapping("/visitCount")
+    public Map<String, Integer> visitCount() {
         int today = visitService.getTodayVisitCount();
         int total = visitService.getTotalCount();
 
@@ -31,6 +37,8 @@ public class VisitController {
         return  result;
 
     }
+
+
 
 
 }
