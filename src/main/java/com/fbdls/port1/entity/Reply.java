@@ -1,5 +1,6 @@
 package com.fbdls.port1.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,7 @@ public class Reply {
 
     private String userId;
 
+    @JsonIgnore
     private String userPwd;
 
     private String reply;

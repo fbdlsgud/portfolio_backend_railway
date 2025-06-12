@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,9 @@ public class ReplyController {
     @Autowired
     ReplyService replyService;
 
+    @Autowired
+    BCryptPasswordEncoder passwordEncoder;
+
     @GetMapping("/replyList")
     public List<Reply> replyList() {
         return replyService.getAllReply();
@@ -24,9 +28,13 @@ public class ReplyController {
 
     @PostMapping("/addReply")
     public ResponseEntity<String> addReply(@RequestBody Reply reply) {
-        Reply r = replyService.saveReply(reply);
 
-        return ResponseEntity.ok(r.getUserId());
+        String hash = passwordEncoder.encode(reply.getUserPwd());
+
+        reply.setUserPwd(hash);
+
+        replyService.saveReply(reply);
+        return ResponseEntity.ok("댓글 등록 성공");
     }
 
     @GetMapping("/replyLatest")
