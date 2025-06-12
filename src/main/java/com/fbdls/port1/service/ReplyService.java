@@ -34,4 +34,8 @@ public class ReplyService {
     public void deleteReply(int rid) {
          replyRepository.deleteById(rid);
     }
+
+    public void deleteAll() {
+        replyRepository.deleteAll();
+    }
 }

@@ -52,7 +52,7 @@ public class ReplyController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("댓글이 존재하지 않습니다.");
         }
 
-        if (!replyPwdChk.getUserPwd().equals(reply.getUserPwd())) {
+        if (!passwordEncoder.matches(reply.getUserPwd(), replyPwdChk.getUserPwd())) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("비밀번호가 일치하지 않습니다.");
         }
 
@@ -60,5 +60,11 @@ public class ReplyController {
         return ResponseEntity.ok("삭제 완료!");
     }
 
+    @PostMapping("deleteAll")
+    public ResponseEntity<String> deleteAll() {
+        replyService.deleteAll();
+
+        return ResponseEntity.ok("삭제 완료");
+    }
 
 }
