@@ -19,15 +19,17 @@ public class Leaderboard {
 
     private String initials;
     private int score;
+    private String gameType = "jump"; // jump, dodge 등
     private LocalDateTime createdAt;
 
     public Leaderboard() {
         this.createdAt = LocalDateTime.now();
     }
 
-    public Leaderboard(String initials, int score) {
+    public Leaderboard(String initials, int score, String gameType) {
         this.initials = initials;
         this.score = score;
+        this.gameType = gameType;
         this.createdAt = LocalDateTime.now();
     }
 }

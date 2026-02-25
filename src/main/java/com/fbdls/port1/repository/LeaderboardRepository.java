@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface LeaderboardRepository extends JpaRepository<Leaderboard, Long> {
     List<Leaderboard> findTop10ByOrderByScoreDesc();
+    List<Leaderboard> findTop10ByGameTypeOrderByScoreDesc(String gameType);
 }

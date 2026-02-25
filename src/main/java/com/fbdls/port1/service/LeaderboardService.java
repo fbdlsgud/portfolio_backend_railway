@@ -12,8 +12,8 @@ public class LeaderboardService {
     @Autowired
     private LeaderboardRepository leaderboardRepository;
 
-    public List<Leaderboard> getTop10() {
-        return leaderboardRepository.findTop10ByOrderByScoreDesc();
+    public List<Leaderboard> getTop10(String gameType) {
+        return leaderboardRepository.findTop10ByGameTypeOrderByScoreDesc(gameType);
     }
 
     public Leaderboard saveScore(Leaderboard leaderboard) {

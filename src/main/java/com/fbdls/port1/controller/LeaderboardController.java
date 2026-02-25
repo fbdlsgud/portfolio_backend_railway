@@ -15,8 +15,8 @@ public class LeaderboardController {
     private LeaderboardService leaderboardService;
 
     @GetMapping("/leaderboard")
-    public List<Leaderboard> getTop10() {
-        return leaderboardService.getTop10();
+    public List<Leaderboard> getTop10(@RequestParam(defaultValue = "jump") String gameType) {
+        return leaderboardService.getTop10(gameType);
     }
 
     @PostMapping("/leaderboard")
